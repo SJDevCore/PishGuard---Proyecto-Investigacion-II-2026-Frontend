@@ -1,0 +1,19 @@
+
+> pish-guard@0.0.0 build
+> ng build
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+main-5GKDRKLP.js    | main          | 348.81 kB |                91.22 kB
+styles-NYLEICL6.css | styles        |  33.55 kB |                 3.21 kB
+
+                    | Initial total | 382.36 kB |                94.43 kB
+
+Application bundle generation complete. [5.579 seconds] - 2026-10-25T18:35:22.168Z
+
+▲ [WARNING] src/app/features/home-page/home-page.css exceeded maximum budget. Budget 4.00 kB was not met by 2.20 kB with a total of 6.20 kB.
+
+
+Output location: /Users/gabo/PishGuard---Proyecto-Investigacion-II-2026-Frontend/dist/PishGuard
+

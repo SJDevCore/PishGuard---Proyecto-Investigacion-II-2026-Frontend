@@ -1,6 +1,6 @@
 <section class="estudio-card">
   <h1>Antes de empezar</h1>
-  <p>Tres preguntas rápidas sobre ti.</p>
+  <p>Seis preguntas rápidas sobre ti.</p>
 
   <label for="programa">Programa</label>
   <select id="programa" [(ngModel)]="programa">
@@ -21,8 +21,37 @@
     ><input type="radio" name="area" [value]="false" [(ngModel)]="area" /> <span>No</span></label
   >
 
+  <label for="capacitacion">¿Has recibido formación en seguridad digital?</label>
+  <select id="capacitacion" [(ngModel)]="capacitacion">
+    <option value="" disabled>Selecciona una opción</option>
+    @for (opcion of capacitaciones; track opcion.valor) {
+      <option [value]="opcion.valor">{{ opcion.texto }}</option>
+    }
+  </select>
+
+  <label for="frecuencia">¿Con qué frecuencia usas banca digital o billeteras?</label>
+  <select id="frecuencia" [(ngModel)]="frecuencia">
+    <option value="" disabled>Selecciona una opción</option>
+    @for (opcion of frecuencias; track opcion.valor) {
+      <option [value]="opcion.valor">{{ opcion.texto }}</option>
+    }
+  </select>
+
+  <label>¿Qué tan capaz te sientes de distinguir un fraude?</label>
+  <div class="escala" role="radiogroup" aria-label="Autoeficacia percibida del 1 al 5">
+    @for (nivel of [1, 2, 3, 4, 5]; track nivel) {
+      <label class="escala-opcion">
+        <input type="radio" name="autoeficacia" [value]="nivel" [(ngModel)]="autoeficacia" />
+        <span>{{ nivel }}</span>
+      </label>
+    }
+  </div>
+  <p class="escala-ayuda">1 = nada capaz · 5 = muy capaz</p>
+
   @if (error()) {
-    <p class="estudio-error">No pudimos conectar con el servidor. Intenta de nuevo.</p>
+    <p class="estudio-error">
+      No pudimos guardar tus datos. Reintenta; tu sesión no se duplicará.
+    </p>
   }
 
   <button class="estudio-btn" [disabled]="!valido || enviando()" (click)="enviar()">

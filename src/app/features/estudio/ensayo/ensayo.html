@@ -1,6 +1,16 @@
 <section class="ensayo">
+  @if (cronometro()) {
+    <p class="cronometro" aria-label="Tiempo transcurrido">
+      Tiempo transcurrido: <strong>{{ cronometro() }}</strong>
+    </p>
+  }
+
   @if (error()) {
-    <p class="pregunta">No pudimos conectar con el servidor. Recarga la página para continuar.</p>
+    <div class="estudio-card">
+      <p class="pregunta">No pudimos conectar con el servidor.</p>
+      <p>Tu sesión sigue activa; puedes reintentar sin perder el avance.</p>
+      <button class="estudio-btn" (click)="reintentar()">Reintentar</button>
+    </div>
   } @else if (transicion(); as t) {
     <div class="estudio-card">
       @if (t === 'intervencion') {

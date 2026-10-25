@@ -1,0 +1,42 @@
+
+> pish-guard@0.0.0 test
+> ng test --watch=false
+
+❯ Building...
+✔ Building...
+Initial chunk files                                        | Names                                                   |  Raw size
+spec-app-features-home-page-home-page.js                   | spec-app-features-home-page-home-page                   |  36.04 kB | 
+spec-app-features-estudio-ensayo-ensayo.js                 | spec-app-features-estudio-ensayo-ensayo                 |  24.06 kB | 
+spec-app-features-estudio-datos-datos.js                   | spec-app-features-estudio-datos-datos                   |  19.69 kB | 
+spec-app-features-admin-admin.js                           | spec-app-features-admin-admin                           |  17.90 kB | 
+spec-app-app.js                                            | spec-app-app                                            |  15.20 kB | 
+spec-app-features-aprende-aprende.js                       | spec-app-features-aprende-aprende                       |  13.39 kB | 
+spec-app-features-estudio-instrucciones-instrucciones.js   | spec-app-features-estudio-instrucciones-instrucciones   |  10.27 kB | 
+styles.css                                                 | styles                                                  |   8.30 kB | 
+spec-app-features-sobre-proyecto-sobre-proyecto.js         | spec-app-features-sobre-proyecto-sobre-proyecto         |   7.66 kB | 
+spec-app-features-estudio-consentimiento-consentimiento.js | spec-app-features-estudio-consentimiento-consentimiento |   6.09 kB | 
+chunk-RSTWSNOR.js                                          | -                                                       |   4.80 kB | 
+spec-app-features-estudio-fin-fin.js                       | spec-app-features-estudio-fin-fin                       |   4.50 kB | 
+chunk-R5AL5WVW.js                                          | -                                                       |   2.50 kB | 
+init-testbed.js                                            | init-testbed                                            |   2.27 kB | 
+spec-app-core-sesion.service.js                            | spec-app-core-sesion.service                            |   1.57 kB | 
+chunk-SC3KRF3I.js                                          | -                                                       |   1.33 kB | 
+vitest-mock-patch.js                                       | vitest-mock-patch                                       | 988 bytes | 
+spec-app-core-tiempo.js                                    | spec-app-core-tiempo                                    | 694 bytes | 
+chunk-7ZM7AW2O.js                                          | -                                                       | 660 bytes | 
+chunk-5PZJ4GI3.js                                          | -                                                       | 211 bytes | 
+init-compiler.js                                           | init-compiler                                           | 166 bytes | 
+
+                                                           | Initial total                                           | 178.31 kB
+
+Application bundle generation complete. [2.201 seconds] - 2026-10-25T18:35:18.447Z
+
+
+ RUN  v4.1.11 /Users/gabo/PishGuard---Proyecto-Investigacion-II-2026-Frontend
+
+
+ Test Files  12 passed (12)
+      Tests  19 passed (19)
+   Start at  13:35:18
+   Duration  4.01s (transform 667ms, setup 8.02s, import 1.34s, tests 1.48s, environment 23.79s)
+

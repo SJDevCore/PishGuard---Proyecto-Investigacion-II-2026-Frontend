@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { SesionService } from '../../../core/sesion.service';
 
 @Component({
   selector: 'app-consentimiento',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class Consentimiento {
   private router = inject(Router);
+  private sesion = inject(SesionService);
   acepta = signal(false);
 
   marcar(evento: Event) {
@@ -16,7 +18,7 @@ export class Consentimiento {
   }
 
   continuar() {
-    sessionStorage.setItem('consentimiento', '1');
+    this.sesion.aceptarConsentimiento();
     this.router.navigateByUrl('/estudio/datos');
   }
 }

@@ -1,5 +1,6 @@
 import { Component, afterNextRender, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { SesionService } from '../../../core/sesion.service';
 
 @Component({
   selector: 'app-instrucciones',
@@ -9,11 +10,12 @@ import { Router } from '@angular/router';
 })
 export class Instrucciones {
   private router = inject(Router);
+  private sesion = inject(SesionService);
   practicado = signal(false);
 
   constructor() {
     afterNextRender(() => {
-      if (!sessionStorage.getItem('sesionId')) this.router.navigateByUrl('/estudio');
+      if (!this.sesion.sesionId) this.router.navigateByUrl('/estudio');
     });
   }
 

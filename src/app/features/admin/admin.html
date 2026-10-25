@@ -20,8 +20,9 @@
 
     <p class="resumen">
       Sesiones iniciadas: <strong>{{ resumen().sesiones }}</strong> · Completas:
-      <strong>{{ resumen().completas }}</strong> · Mostrando las últimas
-      {{ filas().length }} respuestas
+      <strong>{{ resumen().completas }}</strong> · Duración promedio:
+      <strong>{{ formatearDuracion(resumen().duracion_promedio_ms) }}</strong> · Mostrando las
+      últimas {{ filas().length }} respuestas
     </p>
 
     <div class="tabla">
@@ -37,6 +38,7 @@
             <th>Correcta</th>
             <th>Cliente (ms)</th>
             <th>Servidor (ms)</th>
+            <th>Duración sesión</th>
             <th>Respondido</th>
           </tr>
         </thead>
@@ -52,11 +54,12 @@
               <td>{{ f.correcta ? 'Sí' : 'No' }}</td>
               <td>{{ f.latencia_ms }}</td>
               <td>{{ f.servidor_ms }}</td>
+              <td>{{ formatearDuracion(f.duracion_sesion_ms) }}</td>
               <td>{{ f.respondido_en }}</td>
             </tr>
           } @empty {
             <tr>
-              <td colspan="10">Aún no hay respuestas.</td>
+              <td colspan="11">Aún no hay respuestas.</td>
             </tr>
           }
         </tbody>

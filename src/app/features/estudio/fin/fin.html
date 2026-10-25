@@ -4,6 +4,9 @@
     Tus respuestas quedaron registradas de forma anónima y ayudarán a entender cómo los estudiantes
     detectan el fraude bancario.
   </p>
+  @if (duracion() !== null) {
+    <p>Tiempo total de la sesión: <strong>{{ tiempoTotal() }}</strong></p>
+  }
   <p>Si quieres saber más sobre cómo reconocer estos mensajes:</p>
   <a
     routerLink="/aprende"

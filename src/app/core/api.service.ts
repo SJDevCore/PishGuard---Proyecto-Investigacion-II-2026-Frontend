@@ -9,6 +9,8 @@ export interface Siguiente {
   ensayoId?: string;
   posicion?: number;
   total?: number;
+  iniciadaEn?: string;
+  duracionMs?: number | null;
   estimulo?: Estimulo;
 }
 
@@ -19,6 +21,9 @@ export interface ResultadoRespuesta {
   cambioFase?: 'intervencion' | 'post' | null;
 }
 
+export type CapacitacionPrevia = 'formal' | 'informal' | 'no';
+export type FrecuenciaUso = 'diaria' | 'varias_semana' | 'semanal' | 'mensual' | 'nunca';
+
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private http = inject(HttpClient);
@@ -28,7 +33,11 @@ export class ApiService {
     programa: string;
     semestre: number;
     areaTecnologica: boolean;
+    capacitacionPrevia: CapacitacionPrevia;
+    frecuenciaUso: FrecuenciaUso;
+    autoeficacia: number;
     consentimiento: true;
+    clientSessionId: string;
   }) {
     return firstValueFrom(this.http.post<{ sesionId: string }>(`${this.url}/sesiones`, datos));
   }
