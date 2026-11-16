@@ -12,6 +12,9 @@ import { formatearDuracion } from '../../../core/tiempo';
   templateUrl: './ensayo.html',
   styleUrl: './ensayo.css',
 })
+
+const BLOQUEO_MIN_MS = 800;
+
 export class Ensayo implements OnDestroy {
   private router = inject(Router);
   private api = inject(ApiService);
@@ -64,7 +67,7 @@ export class Ensayo implements OnDestroy {
       requestAnimationFrame(() =>
         requestAnimationFrame(() => {
           this.inicio = performance.now();
-          this.listo.set(true);
+          setTimeout(() => this.listo.set(true), BLOQUEO_MIN_MS);
         }),
       );
     } catch (error) {
