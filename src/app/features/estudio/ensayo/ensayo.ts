@@ -6,15 +6,13 @@ import { Opcion } from '../../../core/models/estimulo';
 import { SesionService } from '../../../core/sesion.service';
 import { formatearDuracion } from '../../../core/tiempo';
 
+const BLOQUEO_MIN_MS = 800;
 @Component({
   selector: 'app-ensayo',
   imports: [],
   templateUrl: './ensayo.html',
   styleUrl: './ensayo.css',
 })
-
-const BLOQUEO_MIN_MS = 800;
-
 export class Ensayo implements OnDestroy {
   private router = inject(Router);
   private api = inject(ApiService);
