@@ -39,6 +39,7 @@
             <th>Cliente (ms)</th>
             <th>Servidor (ms)</th>
             <th>Duración sesión</th>
+            <th>Apresurada</th>
             <th>Respondido</th>
           </tr>
         </thead>
@@ -55,6 +56,7 @@
               <td>{{ f.latencia_ms }}</td>
               <td>{{ f.servidor_ms }}</td>
               <td>{{ formatearDuracion(f.duracion_sesion_ms) }}</td>
+              <td>{{ f.sesion_apresurada ? 'Sí' : 'No' }}</td>
               <td>{{ f.respondido_en }}</td>
             </tr>
           } @empty {

@@ -17,6 +17,7 @@ interface Fila {
   iniciada_en: string | null;
   finalizada_en: string | null;
   duracion_sesion_ms: number | null;
+  sesion_apresurada: boolean;
   respondido_en: string;
 }
 
