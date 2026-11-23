@@ -24,5 +24,20 @@
     <span>He leído la información y acepto participar.</span>
   </label>
 
-  <button class="estudio-btn" [disabled]="!acepta()" (click)="continuar()">Continuar</button>
+  @if (servidor() === 'conectando') {
+    <p class="estado-servidor">
+      Conectando con el servidor… puede tardar hasta un minuto la primera vez.
+    </p>
+  } @else if (servidor() === 'error') {
+    <p class="estudio-error">No pudimos conectar con el servidor.</p>
+    <button class="estudio-btn" (click)="reintentar()">Reintentar</button>
+  }
+
+  <button
+    class="estudio-btn"
+    [disabled]="!acepta() || servidor() !== 'listo'"
+    (click)="continuar()"
+  >
+    {{ servidor() === 'listo' ? 'Continuar' : 'Esperando al servidor…' }}
+  </button>
 </section>

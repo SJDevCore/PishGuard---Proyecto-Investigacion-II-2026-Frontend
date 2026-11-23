@@ -55,4 +55,7 @@ export class ApiService {
       }),
     );
   }
+  despertar() {
+    return firstValueFrom(this.http.get(`${this.url}/ping`, { responseType: 'text' }));
+  }
 }

@@ -1,0 +1,5 @@
+.estado-servidor {
+  font-size: 0.875rem;
+  color: var(--warning) !important;
+  font-weight: 600;
+}
