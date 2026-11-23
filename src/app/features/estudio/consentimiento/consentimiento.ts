@@ -24,13 +24,14 @@ export class Consentimiento {
   // Despierta el backend mientras el participante lee; reintenta hasta ~90 s
   private async despertarServidor() {
     this.servidor.set('conectando');
-    for (let intento = 0; intento < 6; intento++) {
+    const limite = Date.now() + 120_000;
+    while (Date.now() < limite) {
       try {
         await this.api.despertar();
         this.servidor.set('listo');
         return;
       } catch {
-        await new Promise((r) => setTimeout(r, 15000));
+        await new Promise((r) => setTimeout(r, 3000));
       }
     }
     this.servidor.set('error');
